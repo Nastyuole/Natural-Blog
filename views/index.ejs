@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Document</title>
+</head>
+<body>
+     
+
+<header class="p-3 border-bottom"> <div class="container">
+   <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+     <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none"> </a>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"> 
+          <li><a href="/" class="nav-link px-2 link-body-emphasis">Home</a></li> 
+          <li><a href="/Inventory" class="nav-link px-2 link-body-emphasis">Additional images</a></li>  </ul> 
+              <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex" role="search" action="/" method="GET"> 
+                <input type="search" name="q" class="form-control me-2" placeholder="Search..." aria-label="Search"> 
+                <a href="/" class="btn btn-outline-secondary">Clear</a>
+              </form>
+</li> </ul> </div> </div> </div> </header>
+
+<div class="heroes">
+  <div class="container col-xxl-8 px-4 pt-5"> 
+    <div class="row flex-lg-row-reverse align-items-center g-5 pt-5"> 
+      <div class="col-10 col-sm-8 col-lg-6"> 
+        <img src="images/HomeBackground.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy"> </div> 
+  <div class="col-lg-6"> <h1 class="display-5 fw-bold lh-1 mb-3 home-title">Home</h1>
+     <h5 class="lead home-title">Choose the Landscape that you are interested in.</h5> 
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+       </div> </div> </div> </div></div>
+
+<div class="container-cards">
+  <% cards.forEach(card => { %>
+ <div class="card" style="width: 22rem;">
+  <img src="<%= card.img %>" class="card-img-top" alt="..." style="width: 350px; height: 199.828px;">
+  <div class="card-body">
+    <h5 class="card-title"><%= card.title %></h5>
+    <p class="card-text"><%= card.text %></p>
+
+    <form action="<%= card.action  %>" method="POST">
+      <button type="submit" class="btn btn-secondary">Go</button>
+  </form>
+  </div>
+</div>
+<% })  %>
+</div>
+<%- include("partials/footer.ejs") %>
+
+</body>
+</html>
